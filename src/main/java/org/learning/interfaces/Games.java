@@ -1,5 +1,6 @@
 package org.learning.interfaces;
 
+//A game framework using Factory Methods
 interface Game {
     boolean move();
 }
