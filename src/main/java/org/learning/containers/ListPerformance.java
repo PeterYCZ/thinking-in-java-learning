@@ -156,6 +156,20 @@ public class ListPerformance {
                 return Arrays.asList(ia);
             }
         };
+
+        arrayTest.setHeadline("Array as List");
+        arrayTest.timedTest();
+        Tester.defaultParams = TestParam.array(10,5000,100,5000,1000,1000,10000,200);
+        if(args.length > 0){
+            Tester.defaultParams = TestParam.array(args);
+        }
+        ListTester.run(new ArrayList<Integer>(),tests);
+        ListTester.run(new LinkedList<Integer>(),tests);
+        ListTester.run(new Vector<Integer>(),tests);
+        Tester.fieldWidth = 12;
+        Tester<LinkedList<Integer>> qTest = new Tester<LinkedList<Integer>>(new LinkedList<Integer>(),qTests);
+        qTest.setHeadline("Queue tests");
+        qTest.timedTest();
     }
 
 }
