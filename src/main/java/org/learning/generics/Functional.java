@@ -184,6 +184,7 @@ public class Functional {
         AtomicLong ral = reduce(lal,new AtomicLongAdder());
         System.out.println(ral);
         System.out.println(transform(lbd,new BigDecimalUlp()));
+
     }
 
 }
